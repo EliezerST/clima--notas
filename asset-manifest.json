@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.css": "/EliezerST/clima--notas.git/static/css/main.31d6cfe0.css",
+    "main.js": "/EliezerST/clima--notas.git/static/js/main.b6513069.js",
+    "index.html": "/EliezerST/clima--notas.git/index.html",
+    "main.b6513069.js.map": "/EliezerST/clima--notas.git/static/js/main.b6513069.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31d6cfe0.css",
+    "static/js/main.b6513069.js"
+  ]
+}
