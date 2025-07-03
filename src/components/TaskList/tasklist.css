@@ -1,0 +1,20 @@
+.tempo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+
+.list-tarefa {
+    width: 300px;
+    text-align: center;
+    margin: auto;
+    
+}
+
+.list-tarefa li {
+    margin: 2rem;
+    border: 1px solid rgb(206, 206, 206);
+    padding: 10px;
+}
