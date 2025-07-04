@@ -32,7 +32,6 @@ export default function AddTaskModal({ onClose, onAdd, selectedDate }) {
             placeholder="Título da tarefa"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            
           />
 
           <div>

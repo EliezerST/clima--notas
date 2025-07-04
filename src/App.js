@@ -10,24 +10,28 @@ import TarefaCriada from "./components/TarefaCriada"
 function App() {
   const [ selectDate, setSelectDate ] = useState(new Date()); 
   const [showModal, setShowModal] = useState(false)
-  const [task, setTasks] = useState([]);
 
-  // Carrega tarefas salvas no início
-  useEffect(() => {
+  // Inicializa direto lendo do localStorage
+  const [task, setTasks] = useState(() => {
     const armazenadas = localStorage.getItem("tasks");
-    if (armazenadas) {
-      setTasks(JSON.parse(armazenadas));
-    }
-  }, []);
+    return armazenadas ? JSON.parse(armazenadas) : [];
+  });
 
-  // Salva sempre que as tarefas mudam
+  // Salva no localStorage sempre que o estado mudar
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(task));
   }, [task]);
 
+
   const handleAddTask = (newTask) => {
     setTasks((prev) => [...prev, newTask]);
   };
+
+  // Deletar Tarefa
+  const handleDeleteTask = (indexToDelete) => {
+  const novasTarefas = task.filter((_, i) => i !== indexToDelete);
+  setTasks(novasTarefas);
+};
 
   return (
     <div>
@@ -38,11 +42,18 @@ function App() {
       nextLabel={null}
       navigationLabel={null}
       prevLabel={null}
+      tileClassName={({ date, view }) => {
+          if (view === "month") {
+          const dataFormatada = format(date, "yyyy-MM-dd");
+          const temTarefa = task.some((t) => t.date === dataFormatada);
+          return temTarefa ? "dia-com-tarefa" : null;
+        }
+      }}
       />
     <div className="tarefas-container">
       <h2>Tarefas para: {format(selectDate, "dd/MM/yyyy")}</h2>
       
-      <TaskList date={selectDate} tasks={task} />
+      <TaskList date={selectDate} tasks={task} onDelete={handleDeleteTask} />
       
       <button
         onClick={() => setShowModal(true)}

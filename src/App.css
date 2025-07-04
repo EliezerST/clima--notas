@@ -17,7 +17,7 @@ body {
 .date {
     padding: 10px;
     background-color: #fff;
-    width: 1000px;
+    width: 800px;
     margin: 20px auto;
     border-radius: 12px;
     overflow: hidden;
@@ -33,6 +33,21 @@ body {
     font-size: 1em;
     margin-bottom: 10px;
     font-weight: 500;
+}
+
+.react-calendar__navigation {
+  text-align: center;
+  text-decoration: none;
+  margin-bottom: 20px;
+  font-size: 60px;
+}
+
+.react-calendar__navigation__arrow {
+    display: none;
+  }
+
+.react-calendar__navigation button {
+  font-size: .8em;
 }
 
 .tarefas-container {
@@ -71,6 +86,21 @@ button:hover {
 
 .buttom {
     background-color: rgb(112, 216, 241);
+}
+
+/* Dias com tarefas */
+.dia-com-tarefa {
+  position: relative;
+}
+
+.dia-com-tarefa::after {
+  content: "";
+  position: absolute;
+  bottom: 6px;
+  right: 15%;
+  width: 70%;
+  height: 2px;
+  background-color: #03a4af; /* azul */
 }
 
 /* Lista de tarefas */
