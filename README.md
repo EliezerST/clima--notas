@@ -1,5 +1,5 @@
 <h1>Projeto em React</h1>
 
-/* Com localStoge */
+<p> Com localStoge </P>
 
 
