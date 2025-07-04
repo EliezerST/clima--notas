@@ -1,6 +1,6 @@
 <h1>Projeto em React</h1>
 
-<p> Com localStoge </P>
+<p> Com localStoge - Salvando em Nuvem no proprio navegador </P>
 
 <h2>Meu Projeto</h2>
 
